@@ -1,0 +1,107 @@
+
+$bg-color: rgb(0, 41, 65);
+$simple-btn-color: hsla(0, 0, 90, 100%);
+$simple-btn-color-hover: hsla(0, 0, 90, 80%);
+$eq-btn-color: hsla(0, 70, 64, 100%);
+$er-btn-color: hsla(205, 42, 49, 100%);
+$er-btn-color-hover: hsla(205, 42, 49, 80%);
+$sc-color: rgb(1, 7, 54);
+$txt-color: hsl(41, 100%, 44%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    .theme-switcher {
+        .theme {
+            margin: 10px 5px;
+            
+        }
+    }
+    .cal-frame {
+        width: 382px;
+        height: 490px;
+        background-color: $bg-color;
+        border-radius: 20px;
+        .cal-screen {
+            padding: 20px;
+            color: $txt-color;
+            text-align: right;
+            .cal-sc {
+                margin: auto;
+                width: 345px;
+                height: 46px;
+                background-color: $sc-color;
+                border: 1px solid white;
+                font-weight: 500;
+            }
+            .top {
+                border-radius: 10px 10px 0 0;
+                border-bottom: none;
+                padding: 7px;
+            }
+            .bottom {
+                border-radius: 0 0 10px 10px;
+                border-top: none;
+                padding: 7px;
+            }
+        }
+        .cal-btn {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 10% 6%;
+            .sim-btn {
+                border: none;
+                width: 78px;
+                height: 48px;
+                border-radius: 5px;
+            }
+            .x {
+                grid-row: 5;
+                grid-column: 1 / span 2;
+                width: 100%;
+            }
+            .y {
+                grid-row: 5;
+                grid-column: 3 / span 2;
+                width: 100%;
+            }
+            .wl {
+                background-color: $simple-btn-color;
+            }
+            .bl {
+                background-color: $er-btn-color;
+                color: white;
+            }
+            .rl {
+                background-color: $eq-btn-color;
+                color: white;
+            }
+            .rl:hover, .bl:hover, .wl:hover {
+                opacity: 0.85;
+            }
+            .sim-btn:active {
+                transform: scale(0.97);
+                transition: 0.1s;
+            }
+        }
+
+    }
+}
+@media only screen and (width < 610px) {
+    .screen {
+        background-color: $bg-color;
+        transition: 0.2s;
+    }
+}
