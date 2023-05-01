@@ -51,12 +51,6 @@ export const Calculator = () => {
 
     return (
         <div className="screen">
-            <div className="theme-switcher">
-                <p>Theme</p>
-                <input type="radio" name="t-s" className="theme a"></input>
-                <input type="radio" name="t-s" className="theme b"></input>
-                <input type="radio" name="t-s" className="theme c"></input>
-            </div>
             <div className="cal-frame">
                 <div className="cal-screen">
                     <div className="cal-sc top">{showEquation}</div>
