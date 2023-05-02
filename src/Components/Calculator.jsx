@@ -46,15 +46,14 @@ export const Calculator = () => {
         } else {
             setEquation(ans);
         }
-        document.documentElement.style.setProperty("--bg-color", 'white');
     }
 
     return (
         <div className="screen">
             <div className="cal-frame">
                 <div className="cal-screen">
-                    <div className="cal-sc top">{showEquation}</div>
-                    <div className="cal-sc bottom">{equation}</div>
+                    <input type="text" className="cal-sc top" value={showEquation} readOnly />
+                    <input type="text" className="cal-sc bottom" value={equation} readOnly />
                 </div>
                 <div className="cal-btn">
                     <button className="sim-btn wl" value={"7"} onClick={()=>{setEquation(equation + "7" ); setState(!state)}}>7</button>
